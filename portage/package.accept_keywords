@@ -12,5 +12,4 @@ app-emulation/genymotion-bin ~amd64
 app-misc/anki ~amd64
 net-p2p/go-ipfs ~amd64
 app-misc/tty-clock ~amd64
-# required by sublime-text (argument)
-=app-editors/sublime-text-4_p4113 ~amd64
+app-editors/sublime-text-4 ~amd64
