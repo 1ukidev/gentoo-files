@@ -1,0 +1,16 @@
+x11-misc/pcmanfm ~amd64
+app-misc/nnn ~amd64
+x11-libs/libfm ~amd64
+dev-util/tokei ~amd64
+x11-misc/xbanish ~amd64
+sys-process/bpytop ~amd64
+net-im/discord-bin ~amd64
+dev-qt/qtstyleplugins ~amd64
+net-vpn/protonvpn-cli ~amd64
+net-im/whatsapp-desktop-bin ~amd64
+app-emulation/genymotion-bin ~amd64
+app-misc/anki ~amd64
+net-p2p/go-ipfs ~amd64
+app-misc/tty-clock ~amd64
+# required by sublime-text (argument)
+=app-editors/sublime-text-4_p4113 ~amd64

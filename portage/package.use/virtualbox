@@ -1,0 +1,4 @@
+app-emulation/virtualbox qt5
+# required by sys-apps/flatpak-1.10.2::gentoo
+# required by flatpak (argument)
+>=dev-util/ostree-2020.8 curl
