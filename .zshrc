@@ -1,5 +1,15 @@
+## Others ######################################################### 
+
 # Start X on tty1
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
+
+# Change cursor shape on xterm
+echo -e -n "\x1b[\x34 q"
+
+# Enable transparency on xterm
+[ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 >/dev/null
+
+###################################################################
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -141,3 +151,7 @@ alias gu="git add .; git commit; git push"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# fnm
+export PATH=/home/luki/.fnm:$PATH
+eval "`fnm env`"
