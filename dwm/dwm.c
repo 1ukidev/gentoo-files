@@ -2570,6 +2570,7 @@ resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst)
 	}
 }
 
+/*
 void
 load_xresources(void)
 {
@@ -2587,7 +2588,7 @@ load_xresources(void)
 	for (p = resources; p < resources + LENGTH(resources); p++)
 		resource_load(db, p->name, p->type, p->dst);
 	XCloseDisplay(display);
-}
+} */
 
 int
 main(int argc, char *argv[])
@@ -2604,7 +2605,7 @@ main(int argc, char *argv[])
 		die("dwm: cannot get xcb connection\n");
 	checkotherwm();
 	XrmInitialize();
-	load_xresources();
+	/* load_xresources(); */
 	setup();
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec", NULL) == -1)

@@ -1,4 +1,4 @@
-# Top bar config
+# dwm bar
 while true; do
 	DATE=$(date +"%a %d %h %H:%M")
 	VOL=$(amixer get Master | awk -F'[][]' 'END{ print $2 }')
@@ -8,16 +8,17 @@ while true; do
 	DISKFREE=$(df -h | awk '{ if ($6 == "/") print $4 }')
 	NETSTATE=$(cat /sys/class/net/wlo1/operstate)
 	UPTIME=`uptime | sed 's/.*up\s*//' | sed 's/,\s*[0-9]* user.*//' | sed 's/  / /g'`
-	xsetroot -name "  CPU: $CPUUSE |  TEMP: $TEMPCPU |  /: $DISKFREE |  MEM: $MEMUSE | 墳 VOL: $VOL |  NET: $NETSTATE | 祥 UPTIME: $UPTIME |  $DATE |  $(whoami) |  gentoo linux | dwm 6.2 "
-	sleep 2
+	xsetroot -name " CPU: $CPUUSE | TEMP: $TEMPCPU | /: $DISKFREE | MEM: $MEMUSE | VOL: $VOL | NET: $NETSTATE | UPTIME: $UPTIME | $DATE | $(whoami) | Gentoo Linux | dwm 6.2 "
+	sleep 1
 done &
 
 # Set wallpaper
-feh --bg-fill ~/Imagens/Wallpapers/gentoo-cow-gdm-remake-1920x1080.png &
+nitrogen --restore &
 
-# Compositor
+# Start compositor
+#picom --backend glx --vsync &
 #picom --config ~/.config/picom/picom.conf &
-#xcompmgr &
+xcompmgr &
 
 # Hide cursor
 xbanish &

@@ -16,16 +16,15 @@ static int smartgaps          = 0;        /* 1 means no outer gap when there is 
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "monospace:size=9", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
-static char normbgcolor[]           = "#002b36";
-static char normbordercolor[]       = "#002b36";
-static char normfgcolor[]           = "#839496";
-static char selfgcolor[]            = "#002b36";
-static char selbordercolor[]        = "#839496";
-static char selbgcolor[]            = "#839496";
-static char *colors[][3] = {
-       /*               fg           bg           border           */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor },
+static const char col_gray1[] = "#282a36";
+static const char col_gray2[] = "#ffb86c";
+static const char col_gray3[] = "#ff79c6";
+static const char col_gray4[] = "#ffb86c";
+static const char col_cyan[]  = "#282a36";
+static const char *colors[][3] = {
+    /*               fg         bg         border   */
+    [SchemeNorm] = { col_gray3, col_gray1, col_cyan },
+    [SchemeSel]  = { col_gray4, col_cyan,  col_gray2  },
 };
 
 typedef struct {
@@ -105,7 +104,7 @@ static const char *termcmd[]  = { TERMINAL, NULL };
 /*
  * Xresources preferences to load at startup
  */
-ResourcePref resources[] = {
+/* ResourcePref resources[] = {
 		{ "color0",		STRING,	&normbordercolor },
 		{ "color8",		STRING,	&selbordercolor },
 		{ "color0",		STRING,	&normbgcolor },
@@ -125,7 +124,7 @@ ResourcePref resources[] = {
 		{ "gappov",		INTEGER, &gappov },
 		{ "swallowfloating",	INTEGER, &swallowfloating },
 		{ "smartgaps",		INTEGER, &smartgaps },
-};
+}; */
 
 #include <X11/XF86keysym.h>
 #include "shiftview.c"

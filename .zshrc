@@ -1,4 +1,4 @@
-# startx on boot
+# Start X on tty1
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -115,17 +115,27 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
-alias sudo="doas"
-alias install="doas emerge --autounmask=y --autounmask-write --quiet -av"
-alias update="doas emerge-webrsync && doas emerge --sync"
-alias upgrade="doas emerge --quiet -avuND @world"
-alias uninstall="doas emerge --ask --verbose --depclean"
+alias install="sudo emerge -avq"
+alias update="sudo emerge --sync"
+alias upgrade="sudo emerge -avquND @world"
+alias remove="sudo emerge -Cav"
+alias clean="sudo eclean-pkg; sudo eclean-dist"
+alias search="emerge -S"
 alias cp="cp -i"
-alias poweroff="doas poweroff"
-alias reboot="doas reboot"
-alias zzz="doas zzz"
+alias poweroff="sudo poweroff"
+alias reboot="sudo reboot"
+alias zzz="sudo zzz"
 alias pls="/usr/bin/sudo"
 alias grep="rg"
+alias cgrep="/bin/grep"
+alias e="emacs -nw"
+alias rmf="sudo rm -rf"
+alias ls="exa"
+alias ga="git add ."
+alias gc="git commit"
+alias gp="git pull"
+alias gpu="git push"
+alias gu="git add .; git commit; git push"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

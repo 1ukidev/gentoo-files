@@ -1,2 +1,6 @@
+sys-devel/gcc
+sys-devel/clang
 dev-lang/rust
 dev-qt/qtwebengine
+dev-python/PyQtWebEngine
+net-libs/webkit-gtk
