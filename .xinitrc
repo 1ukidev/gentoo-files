@@ -15,8 +15,10 @@ done &
 # Set wallpaper
 nitrogen --restore &
 
+# Notifications
+dunst &
+
 # Start compositor
-#picom --backend glx --vsync &
 #picom --config ~/.config/picom/picom.conf &
 xcompmgr &
 
