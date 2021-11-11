@@ -40,3 +40,7 @@ app-misc/tty-clock ~amd64
 =games-emulation/snes9x-1.60 ~amd64
 # required by vscode-bin (argument)
 =app-editors/vscode-bin-1.62.0 ~amd64
+# required by =x11-misc/picom-9999 (argument)
+=x11-misc/picom-9999 **
+# required by hollywood (argument)
+=app-misc/hollywood-1.22 ~amd64
