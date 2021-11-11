@@ -8,8 +8,8 @@ while true; do
 	DISKFREE=$(df -h | awk '{ if ($6 == "/") print $4 }')
 	NETSTATE=$(cat /sys/class/net/wlo1/operstate)
 	UPTIME=`uptime | sed 's/.*up\s*//' | sed 's/,\s*[0-9]* user.*//' | sed 's/  / /g'`
-	xsetroot -name " CPU: $CPUUSE | TEMP: $TEMPCPU | /: $DISKFREE | MEM: $MEMUSE | VOL: $VOL | NET: $NETSTATE | UPTIME: $UPTIME | $DATE | $(whoami) | Gentoo Linux | dwm 6.2 "
-	sleep 1
+	xsetroot -name "  CPU: $CPUUSE |  TEMP: $TEMPCPU |  /: $DISKFREE |  MEM: $MEMUSE | 墳 VOL: $VOL |  NET: $NETSTATE | 祥 UPTIME: $UPTIME |  $DATE |  $(whoami) |  Gentoo Linux | dwm 6.2 "
+	sleep 2
 done &
 
 # Set wallpaper
@@ -19,8 +19,9 @@ nitrogen --restore &
 dunst &
 
 # Start compositor
+picom --backend glx --vsync &
 #picom --config ~/.config/picom/picom.conf &
-xcompmgr &
+#xcompmgr &
 
 # Hide cursor
 xbanish &
