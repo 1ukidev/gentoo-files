@@ -69,3 +69,7 @@
 # required by app-emulation/docker-20.10.9::gentoo
 # required by app-emulation/docker (argument)
 >=app-emulation/containerd-1.4.11 btrfs
+# required by app-emulation/virt-manager-3.2.0::gentoo[gtk]
+# required by @selected
+# required by @world (argument)
+>=net-misc/spice-gtk-0.37-r3 usbredir
