@@ -28,8 +28,6 @@ app-misc/tty-clock ~amd64
 =net-im/element-desktop-bin-1.9.2 ~amd64
 # required by telegram-desktop-bin (argument)
 =net-im/telegram-desktop-bin-3.2.2 ~amd64
-# required by signal-desktop-bin (argument)
-=net-im/signal-desktop-bin-5.23.0 ~amd64
 # required by scrcpy (argument)
 =app-mobilephone/scrcpy-1.19 ~amd64
 # required by ppsspp (argument)
@@ -44,3 +42,5 @@ app-misc/tty-clock ~amd64
 =app-misc/hollywood-1.22 ~amd64
 # required by signal-desktop-bin (argument)
 =net-im/signal-desktop-bin-5.23.1 ~amd64
+# required by ngrok-bin (argument)
+=net-misc/ngrok-bin-9999 ~amd64
