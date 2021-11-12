@@ -1,1 +1,1 @@
-app-editors/emacs xft gui gtk
+app-editors/emacs xft gui gtk dynamic-loading
