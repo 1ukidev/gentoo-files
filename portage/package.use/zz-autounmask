@@ -73,3 +73,14 @@
 # required by @selected
 # required by @world (argument)
 >=net-misc/spice-gtk-0.37-r3 usbredir
+# required by dev-libs/libgusb-0.3.7::gentoo
+# required by x11-misc/colord-1.4.5-r1::gentoo
+# required by x11-misc/xiccd-0.3.0::gentoo
+# required by xiccd (argument)
+>=virtual/libusb-1-r2 udev
+# required by virtual/libusb-1-r2::gentoo
+# required by dev-libs/libgusb-0.3.7::gentoo
+# required by x11-misc/colord-1.4.5-r1::gentoo
+# required by x11-misc/xiccd-0.3.0::gentoo
+# required by xiccd (argument)
+>=dev-libs/libusb-1.0.24-r2 udev
