@@ -22,9 +22,9 @@ dunst &
 xrdb -merge ~/.Xresources &
 
 # Start compositor
-picom --backend glx --vsync &
+#picom --backend glx --vsync &
 #picom --config ~/.config/picom/picom.conf &
-#xcompmgr &
+xcompmgr &
 
 # Hide cursor
 xbanish &

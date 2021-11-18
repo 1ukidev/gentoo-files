@@ -44,3 +44,8 @@ app-misc/tty-clock ~amd64
 =net-im/signal-desktop-bin-5.23.1 ~amd64
 # required by ngrok-bin (argument)
 =net-misc/ngrok-bin-9999 ~amd64
+# required by x11-misc/betterlockscreen-4.0.3-r1::guru
+# required by betterlockscreen (argument)
+=x11-misc/i3lock-color-2.13.4 ~amd64
+# required by betterlockscreen (argument)
+=x11-misc/betterlockscreen-4.0.3-r1 ~amd64

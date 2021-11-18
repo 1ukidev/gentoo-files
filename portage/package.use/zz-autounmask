@@ -84,3 +84,6 @@
 # required by x11-misc/xiccd-0.3.0::gentoo
 # required by xiccd (argument)
 >=dev-libs/libusb-1.0.24-r2 udev
+# required by sys-boot/woeusb-3.3.1::gentoo
+# required by woeusb (argument)
+>=sys-boot/grub-2.06-r1 grub_platforms_pc
