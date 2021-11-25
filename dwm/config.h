@@ -14,7 +14,7 @@ static unsigned int gappov    = 25;       /* vert outer gap between windows and 
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
-static int topbar             = 0;        /* 0 means bottom bar */
+static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "monospace:size=9", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static const char col_gray1[] = "#282a36";
 static const char col_gray2[] = "#ffb86c";
