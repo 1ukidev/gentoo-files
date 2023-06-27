@@ -1,3 +1,5 @@
+export GPG_TTY=$TTY
+
 # Start X on login 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
@@ -124,8 +126,6 @@ alias ls="exa --icons"
 alias sl="exa --icons"
 alias grep="rg"
 alias cgrep="/bin/grep"
-
-export GPG_TTY=$(tty)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
