@@ -1,1 +1,4 @@
-app-editors/emacs xft gui gtk dynamic-loading png gif sound
+app-editors/emacs dynamic-loading games
+# required by app-editors/emacs-28.2-r8::gentoo
+# required by emacs (argument)
+>=app-emacs/emacs-common-1.8 games

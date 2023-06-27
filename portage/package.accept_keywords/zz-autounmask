@@ -1,0 +1,15 @@
+# package.accept_keywords# required by duf (argument)
+=sys-fs/duf-0.8.1 ~amd64
+# required by x11-misc/pcmanfm-1.3.2-r1::gentoo
+# required by pcmanfm (argument)
+=x11-libs/libfm-1.3.2 ~amd64
+# required by pcmanfm (argument)
+=x11-misc/pcmanfm-1.3.2-r1 ~amd64
+# required by igt-gpu-tools (argument)
+=x11-apps/igt-gpu-tools-1.27.1 ~amd64
+# required by vscode (argument)
+=app-editors/vscode-1.79.2 ~amd64
+# required by tldr (argument)
+=app-text/tldr-2.0.0-r1 ~amd64
+# required by telegram-desktop-bin (argument)
+=net-im/telegram-desktop-bin-4.8.4 ~amd64

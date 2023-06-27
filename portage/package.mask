@@ -1,5 +1,5 @@
-sys-devel/gcc
 sys-devel/clang
+sys-devel/llvm
 dev-lang/rust
 dev-qt/qtwebengine
 dev-python/PyQtWebEngine

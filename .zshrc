@@ -1,15 +1,7 @@
-## Others ######################################################### 
-
-# Start X on tty1
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
-
-# Change cursor shape on xterm
-echo -e -n "\x1b[\x34 q"
-
-# Enable transparency on xterm
-[ -n "$XTERM_VERSION" ] && transset --id "$WINDOWID" 0.9 >/dev/null
-
-###################################################################
+# Start X on login 
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -22,7 +14,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/luki/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -43,14 +35,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -65,8 +56,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -123,35 +115,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Aliases
-alias zshconfig="nvim ~/.zshrc"
-alias install="sudo emerge -avq"
-alias update="sudo emerge --sync"
-alias upgrade="sudo emerge -avquND @world"
-alias remove="sudo emerge -Cav"
-alias clean="sudo eclean-pkg; sudo eclean-dist"
-alias search="emerge -S"
-alias cp="cp -i"
-alias poweroff="sudo poweroff"
-alias reboot="sudo reboot"
-alias zzz="sudo zzz"
-alias pls="/usr/bin/sudo"
+# others
+alias clean="sudo eclean-dist && sudo eclean-pkg"
+alias sudo="doas"
+alias cat="bat --theme=gruvbox-dark"
+alias less="bat --theme=gruvbox-dark"
+alias ls="exa --icons"
+alias sl="exa --icons"
 alias grep="rg"
 alias cgrep="/bin/grep"
-alias e="emacs -nw"
-alias rmf="sudo rm -rf"
-alias ls="exa"
-alias ga="git add ."
-alias gc="git commit"
-alias gp="git pull"
-alias gpu="git push"
-alias gu="git add .; git commit; git push"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export GPG_TTY=$(tty)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# fnm
-export PATH=/home/luki/.fnm:$PATH
-eval "`fnm env`"
