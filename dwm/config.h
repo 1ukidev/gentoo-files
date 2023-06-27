@@ -103,11 +103,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-  { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+  	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-  { 0,				                    XF86XK_MonBrightnessUp,	spawn, {.v = light_up} },
-	{ 0,				                    XF86XK_MonBrightnessDown,	spawn, {.v = light_down} },
+  	{ 0,				XF86XK_MonBrightnessUp,	spawn, {.v = light_up} },
+	{ 0,				XF86XK_MonBrightnessDown, spawn, {.v = light_down} },
 };
 
 /* button definitions */
