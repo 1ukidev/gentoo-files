@@ -13,3 +13,9 @@
 =app-text/tldr-2.0.0-r1 ~amd64
 # required by telegram-desktop-bin (argument)
 =net-im/telegram-desktop-bin-4.8.4 ~amd64
+# required by diff-so-fancy (argument)
+=app-misc/diff-so-fancy-1.4.3-r1 ~amd64
+# required by obs-studio (argument)
+=media-video/obs-studio-29.1.3 ~amd64
+# required by xbanish (argument)
+=x11-misc/xbanish-1.8_p20230519 ~amd64
