@@ -1,6 +1,6 @@
 echo 96000 > /sys/class/backlight/intel_backlight/brightness
 setxkbmap br
-xset r rate 125 35
+xset r rate 200 30
 dwmblocks &
 dunst &
 picom --config /dev/null --backend glx --vsync &
