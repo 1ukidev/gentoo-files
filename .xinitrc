@@ -4,6 +4,7 @@ xset r rate 125 35
 dwmblocks &
 dunst &
 picom --config /dev/null --backend glx --vsync &
+xbanish &
 nitrogen --restore
 discord --start-minimized &
 telegram-dekstop -startintray &
