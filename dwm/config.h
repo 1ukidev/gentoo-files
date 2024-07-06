@@ -4,21 +4,21 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 10;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#000000";
-static const char col_gray2[]       = "#ffffff";
+static const char *fonts[]          = { "monospace:size=9" };
+static const char dmenufont[]       = "monospace:size=9";
+static const char col_gray1[]       = "#111111";
+static const char col_gray2[]       = "#111111";
 static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#000000";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_gray5[]       = "#555555";
+static const char col_black[]       = "#111111";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_cyan },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_gray2  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_black, col_gray5 },
 };
 
 /* tagging */
@@ -60,14 +60,16 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_black, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "xfce4-terminal", NULL };
 
-static const char *upvol[]      = { "/usr/bin/pactl",   "set-sink-volume", "3",      "+3%",      NULL };
-static const char *downvol[]    = { "/usr/bin/pactl",   "set-sink-volume", "3",      "-3%",      NULL };
-static const char *mutevol[]    = { "/usr/bin/pactl",   "set-sink-mute",   "3",      "toggle",   NULL };
-static const char *light_up[]   = { "/usr/bin/light",   "-A", "5", NULL };
-static const char *light_down[] = { "/usr/bin/light",   "-U", "5", NULL };
+static const char *upvol[]      = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+3%", NULL };
+static const char *downvol[]    = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-3%", NULL };
+static const char *mutevol[]    = { "/usr/bin/pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
+static const char *light_up[]   = { "/usr/bin/light", "-A", "5", NULL };
+static const char *light_down[] = { "/usr/bin/light", "-U", "5", NULL };
+static const char *print[]      = { "/usr/bin/flameshot", "gui", NULL };
+static const char *lock[]       = { "/usr/bin/i3lock", "-c", "000000", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -104,11 +106,13 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-  	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-	{ 0,                            XF86XK_AudioMute, spawn, {.v = mutevol } },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol } },
-  	{ 0,                            XF86XK_MonBrightnessUp, spawn, {.v = light_up } },
+    { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lock } },
+  	{ 0,                            XF86XK_AudioLowerVolume,  spawn, {.v = downvol } },
+	{ 0,                            XF86XK_AudioMute,         spawn, {.v = mutevol } },
+	{ 0,                            XF86XK_AudioRaiseVolume,  spawn, {.v = upvol } },
+  	{ 0,                            XF86XK_MonBrightnessUp,   spawn, {.v = light_up } },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn, {.v = light_down } },
+    { 0,                            XK_Print,                 spawn, {.v = print } }
 };
 
 /* button definitions */
@@ -127,3 +131,4 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+

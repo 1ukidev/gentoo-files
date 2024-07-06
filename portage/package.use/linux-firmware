@@ -1,0 +1,7 @@
+sys-kernel/linux-firmware compress-zstd
+# required by media-libs/mesa-24.0.9::gentoo[-video_cards_radeon,-video_cards_r600,video_cards_radeonsi,-video_cards_r300]
+# required by x11-base/xorg-server-21.1.13-r1::gentoo[-minimal]
+# required by x11-drivers/xf86-input-libinput-1.4.0::gentoo
+# required by x11-base/xorg-drivers-21.1-r2::gentoo[input_devices_libinput]
+# required by xorg-drivers (argument)
+>=x11-libs/libdrm-2.4.120 video_cards_radeon

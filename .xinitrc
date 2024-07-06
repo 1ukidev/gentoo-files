@@ -1,11 +1,10 @@
-echo 96000 > /sys/class/backlight/intel_backlight/brightness
+xrandr --output HDMI-A-0 --primary
 setxkbmap br
-xset r rate 200 30
-dwmblocks &
-dunst &
-picom --config /dev/null --backend glx --vsync &
-xbanish &
+xset r rate 250 35
+xsetroot -name " dwm "
+#pgrep -x picom > /dev/null || picom --config /dev/null --backend xrender --vsync &
 nitrogen --restore
-discord --start-minimized &
-telegram-dekstop -startintray &
+pgrep -x dwmblocks > /dev/null || dwmblocks &
+pgrep -x dunst > /dev/null || dunst &
+pgrep -x xbanish > /dev/null || xbanish &
 dwm

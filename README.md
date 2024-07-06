@@ -2,6 +2,6 @@
 
 # Gentoo files
 ## /etc/portage, xinitrc, zshrc, dwm, dmenu and dwmblocks
-![Screenshot](screenshot.png)</br>
+![Screenshot](gentoo.png)</br>
 
  </div>
